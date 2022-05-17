@@ -28,7 +28,7 @@ let s:scotchSyntax = {
             \ , 'scotchRepeat': []
             \ , 'scotchStructure': []
             \ , 'scotchType': ["i32", "i64", "f32", "f64"]
-            \ , 'scotchVarDecl': ["const"]
+            \ , 'scotchVarDecl': ["const", "let"]
             \ }
 
 function! s:syntax_keyword(dict)
@@ -41,7 +41,7 @@ endfunction
 
 call s:syntax_keyword(s:scotchSyntax)
 
-syntax match scotchOperator display "[=:;]"
+syntax match scotchOperator display "[=:;+\-\*/]"
 
 
 syntax match scotchWholeNum display "\v<\d+[ilfd]?"
