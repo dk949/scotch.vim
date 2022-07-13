@@ -13,53 +13,48 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 let s:scotchSyntax = {
-            \   'scotchBoolean': ['true', 'false']
+            \   'scotchBoolean': [ 'true'
+            \ ,     'false' ]
             \ , 'scotchBuiltinFn': []
-            \ , 'scotchConditional': [
-            \       "if"
-            \       , "case"
-            \   ]
+            \ , 'scotchConditional': [ 'if'
+            \ ,     'case' ]
             \ , 'scotchConstant': []
             \ , 'scotchDummyVariable': ['_']
-            \ , 'scotchException': [
-            \       'fail'
-            \       , 'err'
-            \   ]
-            \ , 'scotchExecution': [
-            \       'break'
-            \       , 'continue'
-            \       , 'return'
-            \   ]
-            \ , 'scotchKeyword': ['module', 'import', 'def']
+            \ , 'scotchException': [ 'fail'
+            \ ,     'err' ]
+            \ , 'scotchExecution': [ 'break'
+            \ ,     'continue'
+            \ ,     'return' ]
+            \ , 'scotchKeyword': [ 'module'
+            \ ,     'import'
+            \ ,     'def' ]
             \ , 'scotchMacro': []
-            \ , 'scotchOperator': [
-            \         '~'
-            \       , '&'
-            \       , '|'
-            \       , '!'
-            \       , '**'
-            \       , '//'
-            \       , '%%'
-            \       , '*'
-            \       , '/'
-            \       , '%'
-            \       , '+'
-            \       , '-'
-            \       , '<='
-            \       , '<'
-            \       , '>='
-            \       , '>'
-            \       , '=='
-            \       , '!='
-            \       , '&&'
-            \       , '||'
-            \       , ':'
-            \       , ';'
-            \       , '->'
-            \       , '=>'
-            \       , '='
-            \       , '::'
-            \   ]
+            \ , 'scotchOperator': [ '~'
+            \ ,     '&'
+            \ ,     '|'
+            \ ,     '!'
+            \ ,     '**'
+            \ ,     '//'
+            \ ,     '%%'
+            \ ,     '*'
+            \ ,     '/'
+            \ ,     '%'
+            \ ,     '+'
+            \ ,     '-'
+            \ ,     '<='
+            \ ,     '<'
+            \ ,     '>='
+            \ ,     '>'
+            \ ,     '=='
+            \ ,     '!='
+            \ ,     '&&'
+            \ ,     '||'
+            \ ,     ':'
+            \ ,     ';'
+            \ ,     '->'
+            \ ,     '=>'
+            \ ,     '='
+            \ ,     '::' ]
             \ , 'scotchNull': []
             \ , 'scotchPreProc': []
             \ , 'scotchRepeat': []
