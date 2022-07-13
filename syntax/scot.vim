@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language: Scotch
 " Maintainer: dk949
-" Latest Revision: 2022-03-09
+" Latest Revision: 2022-07-13
 
 " Adapted from zig.vim syntax file (https://github.com/ziglang/zig.vim/blob/master/syntax/zig.vim)
 
@@ -13,22 +13,59 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 let s:scotchSyntax = {
-            \   'scotchBoolean': []
+            \   'scotchBoolean': ['true', 'false']
             \ , 'scotchBuiltinFn': []
-            \ , 'scotchComparatorWord': []
-            \ , 'scotchConditional': []
+            \ , 'scotchConditional': [
+            \       "if"
+            \       , "case"
+            \   ]
             \ , 'scotchConstant': []
-            \ , 'scotchDummyVariable': []
-            \ , 'scotchException': []
-            \ , 'scotchExecution': ["return"]
-            \ , 'scotchKeyword': ["def", "module"]
+            \ , 'scotchDummyVariable': ['_']
+            \ , 'scotchException': [
+            \       'fail'
+            \       , 'err'
+            \   ]
+            \ , 'scotchExecution': [
+            \       'break'
+            \       , 'continue'
+            \       , 'return'
+            \   ]
+            \ , 'scotchKeyword': ['module', 'import', 'def']
             \ , 'scotchMacro': []
+            \ , 'scotchOperator': [
+            \         '~'
+            \       , '&'
+            \       , '|'
+            \       , '!'
+            \       , '**'
+            \       , '//'
+            \       , '%%'
+            \       , '*'
+            \       , '/'
+            \       , '%'
+            \       , '+'
+            \       , '-'
+            \       , '<='
+            \       , '<'
+            \       , '>='
+            \       , '>'
+            \       , '=='
+            \       , '!='
+            \       , '&&'
+            \       , '||'
+            \       , ':'
+            \       , ';'
+            \       , '->'
+            \       , '=>'
+            \       , '='
+            \       , '::'
+            \   ]
             \ , 'scotchNull': []
             \ , 'scotchPreProc': []
             \ , 'scotchRepeat': []
             \ , 'scotchStructure': []
-            \ , 'scotchType': ["i32", "i64", "f32", "f64"]
-            \ , 'scotchVarDecl': ["const", "let"]
+            \ , 'scotchType': ['i32', 'i64', 'f32', 'f64']
+            \ , 'scotchVarDecl': ['static', 'const', 'let']
             \ }
 
 function! s:syntax_keyword(dict)
@@ -40,9 +77,6 @@ function! s:syntax_keyword(dict)
 endfunction
 
 call s:syntax_keyword(s:scotchSyntax)
-
-syntax match scotchOperator display "[=:;+\-\*/]"
-
 
 syntax match scotchWholeNum display "\v<\d+[ilfd]?"
 syntax match scotchDotNum display   "\v<\d+\.\d*[ilfd]?"
