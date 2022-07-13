@@ -49,7 +49,7 @@ syntax match scotchDotNum display   "\v<\d+\.\d*[ilfd]?"
 
 syntax region scotchBlock start="{" end="}" transparent fold
 
-syntax region scotchComment start="//" end="$" contains=scotchTodo
+syntax region scotchComment start="--" end="$" contains=scotchTodo
 
 syntax keyword scotchTodo contained TODO
 
